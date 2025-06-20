@@ -6,6 +6,7 @@ import resumeImage from './assets/resume.png';
 import profileImage from './assets/profile.jpg';
 import Squares from './Squares';
 import SpotlightCard from './SpotlightCard';
+import SplashCursor from './SplashCursor'
 
 // --- HELPER COMPONENTS & DATA ---
 
@@ -73,6 +74,7 @@ export default function App() {
       `}</style>
       <div className="bg-[#0d0c14] text-gray-300 font-sans">
         <Navbar />
+        <SplashCursor />
         <main className="pt-20"> {/* Add padding-top to account for fixed Navbar height */}
           <HeroSection />
           <AboutMeSection />
@@ -170,6 +172,7 @@ function Navbar() {
   );
 }
 
+// Hero Section
 function HeroSection() {
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center text-center bg-[#0d0c14] relative overflow-hidden">
