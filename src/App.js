@@ -132,7 +132,7 @@ const SectionTitle = ({ children }) => (
 // --- PAGE SECTIONS ---
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const navLinks = ["About", "Experience", "Skills", "Projects", "Contact"];
+  const navLinks = ["Home", "About", "Experience", "Skills", "Projects", "Contact"];
 
   return (
     <nav className="bg-[#0d0c14]/60 backdrop-blur-lg fixed w-full z-50 top-0 transition-colors duration-500 border-b border-gray-800/50">
@@ -144,7 +144,7 @@ function Navbar() {
           <div className="hidden md:block">
             <div className="ml-10 flex items-center space-x-6">
               {navLinks.map(link => (
-                <a key={link} href={`#${link.toLowerCase()}`} className="text-gray-300 hover:text-purple-400 px-3 py-2 rounded-md text-sm font-medium transition-all">
+                <a key={link} href={`#${link.toLowerCase() === 'home' ? 'hero' : link.toLowerCase()}`} className="text-gray-300 hover:text-purple-400 px-3 py-2 rounded-md text-sm font-medium transition-all">
                   {link}
                 </a>
               ))}
@@ -161,7 +161,7 @@ function Navbar() {
         <div className="md:hidden bg-[#111019]/95">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navLinks.map(link => (
-              <a key={link} href={`#${link.toLowerCase()}`} onClick={() => setIsOpen(false)} className="text-gray-300 hover:bg-purple-800 hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-all text-center">
+              <a key={link} href={`#${link.toLowerCase() === 'home' ? 'hero' : link.toLowerCase()}`} onClick={() => setIsOpen(false)} className="text-gray-300 hover:bg-purple-800 hover:text-white block px-3 py-2 rounded-md text-base font-medium transition-all text-center">
                 {link}
               </a>
             ))}
@@ -249,7 +249,7 @@ function AboutMeSection() {
           <p>I'm a detail-oriented Computer Science undergraduate from the University of Colombo School of Computing, with hands-on experience in full-stack development using technologies like React, Next.js, Flutter, and Spring Boot. I'm eager to apply my knowledge in real-world applications, contribute to team success, and continuously learn and adapt.</p>
           <p>My journey in tech is driven by a curiosity for solving complex problems and building efficient, user-friendly applications. I thrive in collaborative environments where I can both learn from my peers and share my own insights. I'm currently seeking new opportunities to leverage my skills in a challenging role.</p>
           <div className="flex items-center space-x-6 pt-4">
-            <a href="https://drive.google.com/your-cv-link" target="_blank" rel="noopener noreferrer" className="inline-block bg-purple-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-purple-700 transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(147,51,234,0.4)]">
+            <a href="https://raw.githubusercontent.com/mind-flayers/my-portfolio/cffb5972057fd22bbbcec5b35854b502aba44bd3/src/assets/resume.pdf" target="_blank" rel="noopener noreferrer" className="inline-block bg-purple-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-purple-700 transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(147,51,234,0.4)]">
               View Resume
             </a>
             <div className="flex space-x-4">
@@ -420,8 +420,8 @@ function ContactSection({ openModal }) {
 }
 
 function ContactModal({ closeModal }) {
-  // NOTE: Replace 'YOUR_PHONE_NUMBER' with your actual WhatsApp number including country code (e.g., 94771234567)
-  const whatsappLink = "https://wa.me/94771234567";
+  // Whatsapp number 
+  const whatsappLink = "https://wa.me/94789393823";
 
   return (
     <motion.div
